@@ -38,12 +38,11 @@
   color: #fff;
 }
 
-/* Logo styling for desktop only */
+/* Logo Styling */
 .logo-image {
   max-width: 250px;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
-  margin-left: 210px;
 }
 
 .logo-image:hover {
