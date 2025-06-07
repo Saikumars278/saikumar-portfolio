@@ -10,7 +10,8 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Bootstrap JS (with Popper) is required for toggle
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+ // Bootstrap JS (with Popper) is required for toggle
 
 
 function App() {

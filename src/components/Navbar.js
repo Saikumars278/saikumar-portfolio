@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Make sure bootstrap JS is imported
+import { Collapse } from 'bootstrap';  // Import Collapse directly
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
   useEffect(() => {
@@ -7,18 +8,14 @@ const Navbar = () => {
       const navCollapse = document.getElementById('navbarNav');
       if (!navCollapse) return;
 
-      // Only run on small screens
       if (window.innerWidth < 768 && navCollapse.classList.contains('show')) {
-        // Get Bootstrap Collapse instance
-        const bsCollapse = window.bootstrap?.Collapse.getInstance(navCollapse);
+        const bsCollapse = Collapse.getInstance(navCollapse);
 
         if (bsCollapse) {
           bsCollapse.hide();
         } else {
-          // Fallback: create instance and hide
-          const newCollapse = new window.bootstrap.Collapse(navCollapse, {
-            toggle: false,
-          });
+          // Create new instance with toggle false and hide it
+          const newCollapse = new Collapse(navCollapse, { toggle: false });
           newCollapse.hide();
         }
       }
@@ -26,7 +23,6 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
