@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Collapse } from 'bootstrap';  // Import Collapse directly
+import { Collapse } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
@@ -14,7 +14,6 @@ const Navbar = () => {
         if (bsCollapse) {
           bsCollapse.hide();
         } else {
-          // Create new instance with toggle false and hide it
           const newCollapse = new Collapse(navCollapse, { toggle: false });
           newCollapse.hide();
         }
@@ -22,11 +21,21 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Collapse navbar on nav link click (mobile only)
+  const handleNavLinkClick = () => {
+    const navCollapse = document.getElementById('navbarNav');
+    if (!navCollapse) return;
+
+    if (window.innerWidth < 768 && navCollapse.classList.contains('show')) {
+      const bsCollapse = Collapse.getInstance(navCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm">
@@ -59,7 +68,11 @@ const Navbar = () => {
             {['home', 'about', 'skills', 'projects', 'education', 'contact'].map(
               (section) => (
                 <li className="nav-item" key={section}>
-                  <a className="nav-link" href={`#${section}`}>
+                  <a
+                    className="nav-link"
+                    href={`#${section}`}
+                    onClick={handleNavLinkClick}
+                  >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </a>
                 </li>
