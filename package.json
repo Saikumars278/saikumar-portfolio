@@ -1,8 +1,8 @@
 {
-  "homepage": "https://Saikumar27820.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Saikumar27820.github.io/myweb",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
@@ -17,6 +17,9 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.3",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
   }
 }
