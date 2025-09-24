@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/about.css'; // Make sure path is correct
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const About = () => {
   return (

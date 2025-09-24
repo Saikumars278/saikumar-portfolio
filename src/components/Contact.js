@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import '../style/contact.css';
 
+
 const Contact = () => {
   const [showModal, setShowModal] = useState(false);
 

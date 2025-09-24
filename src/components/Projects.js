@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/project.css'; // Ensure this path is correct
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Projects = () => {
   return (

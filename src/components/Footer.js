@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 // Import images
 import linkedinIcon from '../images/linkedin.png';

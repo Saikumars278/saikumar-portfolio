@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/home.css';
 import logo from '../images/logo1.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = () => {
   return (

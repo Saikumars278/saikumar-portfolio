@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/skill.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Skill Icons
 import htmlIcon from '../images/html.png';

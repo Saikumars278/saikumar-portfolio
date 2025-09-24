@@ -4,6 +4,7 @@ import '../style/education.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faImage, faAward, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
+
 const EducationCertification = () => {
   return (
     <div className="education-section py-5" id="education">
