@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/footer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 // Import images
 import linkedinIcon from '../images/linkedin.png';
@@ -14,37 +12,10 @@ import arrowUpIcon from '../images/up.png';
 import whatsappIcon from '../images/whatsapp.png';
 
 const Footer = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [animateModal, setAnimateModal] = useState(false);
-
-  // To add fade-in animation on modal open
-  useEffect(() => {
-    if (showModal) {
-      // Trigger animation after render
-      const timer = setTimeout(() => setAnimateModal(true), 10);
-      return () => clearTimeout(timer);
-    } else {
-      setAnimateModal(false);
-    }
-  }, [showModal]);
-
-  const openModal = () => setShowModal(true);
-  const closeModal = () => {
-    setAnimateModal(false);
-    // Wait for animation to finish then hide modal
-    setTimeout(() => setShowModal(false), 300);
+  const whatsappNumber = "918925428378"; // WhatsApp number with country code
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/${whatsappNumber}`, "_blank");
   };
-
-  // Close modal on ESC key press
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape' && showModal) {
-        closeModal();
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [showModal]);
 
   return (
     <>
@@ -90,43 +61,13 @@ const Footer = () => {
       {/* WhatsApp floating button */}
       <button
         className="whatsapp-float"
-        onClick={openModal}
-        aria-label="WhatsApp Coming Soon"
-        title="WhatsApp integration coming soon!"
+        onClick={openWhatsApp}
+        aria-label="Chat on WhatsApp"
+        title="Chat on WhatsApp"
         type="button"
       >
         <img src={whatsappIcon} alt="WhatsApp" />
       </button>
-
-      {/* Modal */}
-      {showModal && (
-        <div
-          className={`custom-modal-overlay ${animateModal ? 'show' : ''}`}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modalTitle"
-          onClick={closeModal} // close modal if clicked outside content
-        >
-          <div
-            className={`custom-modal-content ${animateModal ? 'show' : ''}`}
-            onClick={(e) => e.stopPropagation()} // prevent modal content click from closing
-          >
-            <header className="custom-modal-header">
-              <h5 id="modalTitle">Coming Soon!</h5>
-              <button
-                className="custom-modal-close"
-                onClick={closeModal}
-                aria-label="Close modal"
-              >
-                &times;
-              </button>
-            </header>
-            <div className="custom-modal-body">
-              WhatsApp integration is under development. Stay tuned!
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

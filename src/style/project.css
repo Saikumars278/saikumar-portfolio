@@ -10,6 +10,50 @@
   user-select: none;
   transition: background-color 0.3s ease;
 }
+.tech-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 4px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.tech-badge.react {
+  background-color: #61dafb; /* React Blue */
+  color: #000;
+}
+
+.tech-badge.django {
+  background-color: #092e20; /* Django Green */
+}
+
+.tech-badge.rest-api {
+  background-color: #f39c12; /* API Orange */
+}
+
+.tech-badge.mysql {
+  background-color: #00758f; /* MySQL Teal */
+}
+
+.tech-badge.axios {
+  background-color: #5a29e4; /* Axios Purple */
+}
+
+.tech-badge.css {
+  background-color: #264de4; /* CSS Blue */
+}
+
+.tech-badge.bootstrap {
+  background-color: #6f42c1; /* Bootstrap Violet */
+}
+
+.tech-badge.emailjs {
+  background-color: #ffcc00; /* EmailJS Yellow */
+  color: #000;
+}
+
 
 /* Technology-specific badge colors */
 .tech-badge.react {
